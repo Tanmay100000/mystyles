@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>parallex image</title>
+  <link href="mystyles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<section>
+  <img src="bg.jpg" id="bg">
+  <img src="moon.png" id="moon">
+  <img src="mountain.png" id="mountain">
+  <img src="road.png" id="road">
+
+  <h1 id="text">Dimention!</h1>
+</section>
+<script type="text/javascript">
+	var bg = document.getElementById("bg");
+var moon = document.getElementById("moon");
+var mountain = document.getElementById("mountain");
+var road = document.getElementById("road");
+var text = document.getElementById("text");
+
+window.addEventListener('scroll', function () {
+  var value = window.scrollY;
+  
+  bg.style.transform = `translateZ(-100px) translateY(${value * 0.5}px)`;
+  moon.style.transform = `translateZ(-50px) translateX(${-value * 0.15}px)`;
+  mountain.style.transform = `translateZ(-200px) translateY(${-value * 0.1}px)`;
+  road.style.transform = `translateZ(-50px) translateY(${value * 0.15}px)`;
+  text.style.transform = `translateZ(100px) translateY(${value * 1}px)`;
+
+});
+</script>
+
+</body>
+</html>
